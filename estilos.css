@@ -40,39 +40,52 @@ a:active {
   color: red;
 }
 
-
 /* --- Cabeçalho --- */
-#cabecalho {
+header {
   background-color: rgba(0, 0, 0, .95);
   box-shadow: 2px 10px 10px rgba(0,0,0, .25);
   padding-top: 1em;
   text-align: center;
 }
 
-#cabecalho ul {
+header ul {
   background-color: rgba(0, 204, 147, 0.53);
 }
 
-#cabecalho a {
+header a {
   text-decoration: none;
   text-shadow: 1px 1px black;
 }
 
-#menu-de-navegacao ul {
-  margin-bottom: 0;
+nav ul {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 10px;
+  padding-left: 0px;
 }
 
+nav li {
+  flex: 1;
 
+  margin-right: 4px;
+  text-align: center;
+}
 
 /* --- Conteúdo principal da página --- */
-#conteudo-principal {
+main {
   padding-left: 2.5%;
   transition: opacity 1s linear;
   padding-bottom: 3em;
 }
 
-
-
+.novidade h2::before{
+  content: "Novidade!";
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(0, 113, 189);
+}
 
 /* --- Principal >> Postagens principais --- */
 #posts-principais {
@@ -93,6 +106,11 @@ a:active {
 
 #posts-principais .post .titulo {
   text-shadow: 1px 1px black;
+  position: absolute;
+	top: 0;
+	opacity: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: 1s;
 }
 
 #posts-principais .post img {
@@ -103,8 +121,13 @@ a:active {
   margin-bottom: .5em;
 }
 
+#posts-principais .post:hover .titulo {
+	opacity: 1;
+}
 
-
+#posts-principais article {
+	position: relative;
+}
 
 /* --- Principal >> Últimas postagens --- */
 #ultimas-postagens {
@@ -125,6 +148,7 @@ a:active {
   padding: 3px;
   display: inline-block;
   margin-right: 1em;
+  box-sizing: border-box;
 }
 
 #ultimas-postagens .titulo {
@@ -133,11 +157,8 @@ a:active {
   display: inline-block;
 }
 
-
-
-
 /* --- Principal >> Nuvem de tags --- */
-#tags {
+aside {
   float: right;
   width: 300px;
   padding: 15px;
@@ -147,9 +168,12 @@ a:active {
   background-size: 300px;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
 }
 
-#tags h1 {
+aside h1 {
   margin-bottom: 1em;
   text-shadow: 2px 2px #000;
 }
@@ -174,24 +198,52 @@ a:active {
   font-size: 150%;
 }
 
+mark:active {
+  position: relative;
+  top: -2px;
+  left: -2px;
+}
 
+mark:hover {
+  cursor: pointer;
+}
 
+/* --- Principal >> Fantasmas --- */
 
+.fantasmas{
+  position: fixed;
+  opacity: 15%;
+  width: 50px;
+}
+
+.fantasmas:hover{
+  opacity: 100%;
+  transition: 1s;
+}
+
+#boo1 {
+  top: 1rem;
+}
+
+#boo2 {
+  top: 50%;
+  right: 6rem;
+}
+
+#boo3 {
+  bottom: 6rem;
+}
 
 /* --- Rodapé --- */
-#rodape {
+footer {
   background-color: rgba(0, 0, 0, .7);
   padding: 1em;
   display: flex;
 }
 
-#rodape .logo-rodape {
+footer .logo-rodape {
   margin-right: 2em;
 }
-
-
-
-
 
 /* --- Vídeo --- */
 .backdrop {
